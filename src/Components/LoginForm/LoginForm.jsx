@@ -17,13 +17,15 @@ export default function LoginForm({ setUser }) {
         // Prevent form from being submitted to the server
         evt.preventDefault();
         try {
+            console.log("really anything")
         // The promise returned by the signUp service method 
         // will resolve to the user object included in the
         // payload of the JSON Web Token (JWT)
-        const user = await usersService.login(credentials);
-        setUser(user);
+            const user = await usersService.login(credentials);
+            console.log(user);
+            setUser(user);
         } catch {
-        setError('Log In Failed - Try Again');
+            setError('Log In Failed - Try Again');
         }
     }
 

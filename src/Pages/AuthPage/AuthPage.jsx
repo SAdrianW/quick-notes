@@ -11,7 +11,7 @@ export default function AuthPage({ setUser }) {
 
     return (
         <main>
-            <h1>AuthPage</h1>
+            <h1>AuthPage Quick-Notes</h1>
             <div>
                 {toggle ? <LoginForm setUser={setUser}/> : <SignUpForm setUser={setUser} />}
                 <button onClick={ _handleToggle }>{ buttonText }</button>

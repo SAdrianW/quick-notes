@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "quick-notes",
+  "name": "Quick Notes",
   "icons": [
     {
       "src": "favicon.ico",

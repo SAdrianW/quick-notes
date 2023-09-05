@@ -10,7 +10,7 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
     }
     const token = getToken();
     if (token) {
-        // Need to add Authorisation header
+        // Needs to add Authorisation header
         options.headers ||= {};
         options.headers.Authorization = `Bearer ${token}`;
     }

@@ -17,8 +17,6 @@ app.use(express.json())
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
-// middleware to check and verify a JWT and assign the user object form the JWT to req.user
-app.use(require('./config/check-token'));
 
 // Configure to use port 3001 instead of 3000 during
 // development to avoid collision with React's dev server
