@@ -3,14 +3,14 @@ import { Route, Routes } from 'react-router-dom';
 import { getUser } from "../../Utilities/users-service";
 import NewNotePage from '../NewNotePage/NewNotePage';
 import AuthPage from '../AuthPage/AuthPage';
-import NoteHistoryPage from '../NoteHistoryPage/NoteHistoryPage';
+import NoteListPage from '../NoteListPage/NoteListPage';
 import NavBar from '../../Components/NavBar/NavBar';
 import './App.css';
 
 export default function App() {
     const [user, setUser] = useState(getUser());
-    const [notes, setNotes] = useState(false);
-    const noteReminder = notes ? '' : 'No Notes Yet! Take Note of this Dire Situation!';
+    const [notes, setNotes] = useState([]);
+    const noteReminder =  notes.length !== 0 ? '' : 'No Notes Yet! Take Note of this Dire Situation!';
 
     return (
         <main className="App">
@@ -21,8 +21,8 @@ export default function App() {
                     <h2>{ noteReminder }</h2>
                     <Routes>
                         {/* Route components go in here */}
-                        <Route path="/notes/new" element={<NewNotePage />} />
-                        <Route path="/notes" element={<NoteHistoryPage />} />
+                        <Route path="/notes/new" element={<NewNotePage setNotes={setNotes} />} />
+                        <Route path="/notes" element={<NoteListPage notes={notes} setNotes={setNotes} user={user} />} />
                     </Routes>
                 </> 
                 :
